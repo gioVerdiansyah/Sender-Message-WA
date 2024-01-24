@@ -4,7 +4,7 @@ const sending = (req, res) => {
     const data = req.body;
     console.log(data);
 
-    whatsappClient.sendMessage(data.phone, data.message);
+    whatsappClient.sendMessage(data.phone + '@c.us', data.message);
     res.send();
 }
 

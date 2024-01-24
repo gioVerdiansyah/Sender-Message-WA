@@ -24,6 +24,17 @@ const validateAPIKey = (req, res, next) => {
     next();
 };
 
+app.get("/", (req, res) => {
+    res.setHeader("Content-Type", "text/html");
+    res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+    res.end(`Hello! Ini adalah Web untuk mengirim pesan WhatsApp melalui API yang akan di gunakan oleh Laravel pada project PKL SMKN 1 Mejayan`);
+});
+app.get("/api", (req, res) => {
+    res.setHeader("Content-Type", "text/html");
+    res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+    res.end(`<h1>TERLARANG</h1>`);
+});
+
 // Gunakan middleware untuk setiap request
 app.use(validateAPIKey);
 

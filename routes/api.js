@@ -8,4 +8,5 @@ const sendMessage = require('../controllers/sendingMessageController');
 // Route
 app.post('/send-message', sendMessage.sending);
 
+
 module.exports = app;
